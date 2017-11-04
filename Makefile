@@ -1,6 +1,6 @@
 # Set this variable to your static gsl libraries
-GSLDIR=/usr/lib
-GSL=${GSLDIR}/libgsl.a ${GSLDIR}/libgslcblas.a
+# GSL = /usr/local/lib/libgsl.a /usr/local/lib/libgslcblas.a
+GSL=/usr/local/lib/libgsl.a /usr/local/lib/libgslcblas.a
 
 release : build/release/msmc2
 
@@ -27,8 +27,13 @@ decode : build/decode
 build/decode : model/*.d decode.d 
 	dmd -O ${GSL} -odbuild -of$@ $^
 
+decode_mod : build/decode_mod
+
+build/decode_mod : model/*.d decode_mod.d
+	dmd -O ${GSL} -odbuild -of$@ $^
+
 clean :
-	rm -rf build/debug/* build/release/*
+	rm -rf build/*
 
 .PHONY : clean unittest
 
