@@ -1,15 +1,13 @@
-
-
 This repository represents a small modification to the `decode` programme, which applies the PSMC algorithm to a pair of haplotypes.
 The modification allows the used to only return the posterior probabilities at a specified target site, without dumping the posteriors for the whole chromosome.
 
-Each modification made (in the `decode_mod.d` file) is annotated with "MOD".
+Each modification made (in the `decode_mod.d` file) is annotated in place with "MOD" as line comment.
 
 The modified version can be compiled using `make decode_mod` on the command line.
 
 The original README is given below.
 
---
+---
 
 
 DISCLAIMER: MSMC2 is under development. Use at your own risk!
